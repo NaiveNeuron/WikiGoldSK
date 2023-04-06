@@ -1,0 +1,11 @@
+python3 run_ner.py \
+  --model_name_or_path ~/ner/my_dataset_transformers/output-article/xlm-robera \
+  --test_file /home/dsuba/ner/article/data/final/test-bsnlp-hg.json \
+  --train_file /home/dsuba/ner/article/data/final/test-bsnlp-hg.json \
+  --validation_file /home/dsuba/ner/article/data/final/test-bsnlp-hg.json \
+  --text_column_name sentence \
+  --label_column_name word_labels \
+  --output_dir ./output-article/bsnlp/xlm-roberta \
+  --do_predict \
+  --max_seq_length 1000 \
+  --per_gpu_train_batch_size 32

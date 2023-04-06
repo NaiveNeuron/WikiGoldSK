@@ -1,0 +1,11 @@
+# CONVERT DATA
+python -m spacy convert --converter ner data/train_cleaned.txt data/train_cleaned.spacy
+
+# INIT CONFIG FROM BASE
+python -m spacy init fill-config base_config.cfg config.cfg
+
+# TRAIN
+python -m spacy train config.cfg --output ./output --paths.train data/train_cleaned.spacy --paths.dev data/dev_cleaned.spacy
+
+# TEST
+python -m spacy evaluate output/model-best/ data/test_cleaned.spacy
